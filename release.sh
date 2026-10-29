@@ -17,7 +17,9 @@ EOF
 rm -rf out "$ZIP"
 docker run --rm -v "$PWD":/src -w /src -u "$(id -u):$(id -g)" -e HOME=/tmp -e DOTNET_CLI_TELEMETRY_OPTOUT=1 \
   mcr.microsoft.com/dotnet/sdk:10.0 dotnet publish -c Release -o /src/out -p:AssemblyVersion="$V" -p:FileVersion="$V"
-zip -j -q "$ZIP" out/Jellyfin.Plugin.RewatchNextUp.dll meta.json
+python3 -m zipfile -c "$ZIP" out/Jellyfin.Plugin.RewatchNextUp.dll meta.json
+# Jellyfin marks the plugin Malfunctioned unless the DLL sits at the zip root.
+[ "$(unzip -Z1 "$ZIP" | sort | tr '\n' ' ')" = "Jellyfin.Plugin.RewatchNextUp.dll meta.json " ] || { echo "bad zip layout"; exit 1; }
 
 python3 - "$V" "$ABI" "$NOTES" "$(md5sum "$ZIP" | cut -d' ' -f1)" "https://github.com/$REPO/releases/download/v$V/$ZIP" <<'EOF'
 import datetime, json, sys
