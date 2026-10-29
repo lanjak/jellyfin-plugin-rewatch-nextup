@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "guid": "a3520f75-7cfe-49e0-9b30-a3c108a5a4ce",
+    "name": "Rewatch Next Up",
+    "description": "Shows the next episode of series you are rewatching in Next Up, on every client.",
+    "overview": "Rewatching in Next Up for all clients",
+    "owner": "lanjak",
+    "category": "General",
+    "versions": [
+      {
+        "version": "1.0.0.0",
+        "changelog": "First release. Turns on rewatching in Next Up for clients that do not ask for it, such as Android TV.",
+        "targetAbi": "12.2.0.0",
+        "sourceUrl": "https://github.com/lanjak/jellyfin-plugin-rewatch-nextup/releases/download/v1.0.0.0/rewatch-nextup_1.0.0.0.zip",
+        "checksum": "7629eba918da1c54cc8b26e6f5ef88bb",
+        "timestamp": "2026-10-29T10:54:08Z"
+      }
+    ]
+  }
+]
