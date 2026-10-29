@@ -1,0 +1,13 @@
+{
+  "category": "General",
+  "description": "Shows the next episode of series you are rewatching in Next Up, on every client.",
+  "guid": "a3520f75-7cfe-49e0-9b30-a3c108a5a4ce",
+  "name": "Rewatch Next Up",
+  "overview": "Rewatching in Next Up for all clients",
+  "owner": "lanjak",
+  "targetAbi": "12.2.0.0",
+  "version": "1.0.0.0",
+  "status": "Active",
+  "autoUpdate": false,
+  "assemblies": ["Jellyfin.Plugin.RewatchNextUp.dll"]
+}
